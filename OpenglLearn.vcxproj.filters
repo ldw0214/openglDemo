@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\Core">
+      <UniqueIdentifier>{b492dc97-9e54-4e20-979b-fe573fe1bff5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Threading">
+      <UniqueIdentifier>{923c7954-f5d8-4ce3-b684-ad3d2b1b45a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Graphics">
+      <UniqueIdentifier>{0db49074-913b-4dab-843d-e3f6ca029643}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Plugin">
+      <UniqueIdentifier>{ffc99017-e88a-433f-8077-320ef3a09f55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\App">
+      <UniqueIdentifier>{61d1d420-f13e-43e2-9aec-5b5b082a8943}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Core">
+      <UniqueIdentifier>{7ccd5270-b536-4b2e-a903-c43e7c3c6540}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Threading">
+      <UniqueIdentifier>{d542f49e-a8c2-49e8-ae59-199e493c1fde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Graphics">
+      <UniqueIdentifier>{54e6ba68-1385-4453-beb5-919e51702728}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\PluginManager">
+      <UniqueIdentifier>{528e58ac-9b3d-4787-b51d-d96e9024f27c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\App">
+      <UniqueIdentifier>{07a3daee-cc3d-4e3f-a6c4-fbed47fcb14d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\Shader">
+      <UniqueIdentifier>{d0a11adf-c56b-4351-94ae-02f7ba960140}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\textures">
+      <UniqueIdentifier>{5bd34bda-74e7-4a6c-bf2f-ab7b4aafbeb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\Plugins">
+      <UniqueIdentifier>{9195e696-9208-44fb-b462-1dc132e3537d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\VS\lib\glad\src\glad.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\String.cpp">
+      <Filter>源文件\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\MemoryPool.cpp">
+      <Filter>源文件\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Threading\SPSCQueue.cpp">
+      <Filter>源文件\Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="Threading\ThreadPool.cpp">
+      <Filter>源文件\Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Logger.cpp">
+      <Filter>源文件\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\VertexArray.cpp">
+      <Filter>源文件\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\Shader.cpp">
+      <Filter>源文件\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\Texture.cpp">
+      <Filter>源文件\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\Camera.cpp">
+      <Filter>源文件\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\Renderer.cpp">
+      <Filter>源文件\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\Mesh.cpp">
+      <Filter>源文件\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\Buffer.cpp">
+      <Filter>源文件\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\SceneNode.cpp">
+      <Filter>源文件\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\ParticleSystem.cpp">
+      <Filter>源文件\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\PluginManager.cpp">
+      <Filter>源文件\PluginManager</Filter>
+    </ClCompile>
+    <ClCompile Include="App\Application.cpp">
+      <Filter>源文件\App</Filter>
+    </ClCompile>
+    <ClCompile Include="App\Window.cpp">
+      <Filter>源文件\App</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Core\String.h">
+      <Filter>头文件\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Singleton.h">
+      <Filter>头文件\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\MemoryPool.h">
+      <Filter>头文件\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Logger.h">
+      <Filter>头文件\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Window.h">
+      <Filter>头文件\App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Application.h">
+      <Filter>头文件\App</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugin\PluginManager.h">
+      <Filter>头文件\Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="Threading\ThreadPool.h">
+      <Filter>头文件\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="Threading\SPSCQueue.h">
+      <Filter>头文件\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Buffer.h">
+      <Filter>头文件\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Camera.h">
+      <Filter>头文件\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Mesh.h">
+      <Filter>头文件\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\ParticleSystem.h">
+      <Filter>头文件\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Renderer.h">
+      <Filter>头文件\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\SceneNode.h">
+      <Filter>头文件\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Shader.h">
+      <Filter>头文件\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Texture.h">
+      <Filter>头文件\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\VertexArray.h">
+      <Filter>头文件\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\stb_image.h">
+      <Filter>头文件\Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\MathTool.h">
+      <Filter>头文件\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\ResourceManager.h">
+      <Filter>头文件\Core</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\shaders\basic.frag">
+      <Filter>资源文件\Shader</Filter>
+    </None>
+    <None Include="assets\shaders\basic.vert">
+      <Filter>资源文件\Shader</Filter>
+    </None>
+    <None Include="assets\shaders\particle.frag">
+      <Filter>资源文件\Shader</Filter>
+    </None>
+    <None Include="assets\shaders\particle.vert">
+      <Filter>资源文件\Shader</Filter>
+    </None>
+  </ItemGroup>
+</Project>

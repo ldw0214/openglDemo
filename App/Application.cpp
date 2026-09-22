@@ -83,6 +83,7 @@ namespace MiniEngine {
         );
 
         glfwSetInputMode(m_window->getNativeWindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+        m_isMouseCaptured = true;
     }
     void Application::initOpenGL()
     {
@@ -163,6 +164,7 @@ namespace MiniEngine {
         while (!m_keyBufferQueue.empty())
         {
             keyBufferItme& tempKey = m_keyBufferQueue.front();
+            if (m_isMouseCaptured || tempKey.key == GLFW_KEY_TAB)
             switch (tempKey.key)
             {
             case GLFW_KEY_SPACE:
@@ -171,6 +173,12 @@ namespace MiniEngine {
                     m_camera->jump();
                 }
                 break;
+            case GLFW_KEY_TAB:
+                if (tempKey.action == GLFW_PRESS)
+                {
+                    m_isMouseCaptured = !m_isMouseCaptured;
+                    glfwSetInputMode(native, GLFW_CURSOR, m_isMouseCaptured ? GLFW_CURSOR_DISABLED : GLFW_CURSOR_NORMAL);
+                }
             default:
                 break;
             }

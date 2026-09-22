@@ -1,13 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.6.11822.322 stable
+VisualStudioVersion = 18.6.11822.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenglLearn", "OpenglLearn.vcxproj", "{C147E2DF-8E27-4F43-A829-9CC36B88998C}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pluginItems", "..\pluginItems\pluginItems.vcxproj", "{EDC0C99F-27F7-46A1-8C96-5FFF94058511}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test1", "..\test1\test1.vcxproj", "{825D276B-6158-4476-8A32-A65C59983CF1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "imguiPluginDeom", "..\imguiPluginDeom\imguiPluginDeom.vcxproj", "{D3F2D4CA-D803-4239-B760-926E8FA11461}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ImGUIEdit", "..\ImGUIEdit\ImGUIEdit.vcxproj", "{F190C67D-8034-4A5B-95FA-88B7FE1B044A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +45,22 @@ Global
 		{825D276B-6158-4476-8A32-A65C59983CF1}.Release|x64.Build.0 = Release|x64
 		{825D276B-6158-4476-8A32-A65C59983CF1}.Release|x86.ActiveCfg = Release|Win32
 		{825D276B-6158-4476-8A32-A65C59983CF1}.Release|x86.Build.0 = Release|Win32
+		{D3F2D4CA-D803-4239-B760-926E8FA11461}.Debug|x64.ActiveCfg = Debug|x64
+		{D3F2D4CA-D803-4239-B760-926E8FA11461}.Debug|x64.Build.0 = Debug|x64
+		{D3F2D4CA-D803-4239-B760-926E8FA11461}.Debug|x86.ActiveCfg = Debug|Win32
+		{D3F2D4CA-D803-4239-B760-926E8FA11461}.Debug|x86.Build.0 = Debug|Win32
+		{D3F2D4CA-D803-4239-B760-926E8FA11461}.Release|x64.ActiveCfg = Release|x64
+		{D3F2D4CA-D803-4239-B760-926E8FA11461}.Release|x64.Build.0 = Release|x64
+		{D3F2D4CA-D803-4239-B760-926E8FA11461}.Release|x86.ActiveCfg = Release|Win32
+		{D3F2D4CA-D803-4239-B760-926E8FA11461}.Release|x86.Build.0 = Release|Win32
+		{F190C67D-8034-4A5B-95FA-88B7FE1B044A}.Debug|x64.ActiveCfg = Debug|x64
+		{F190C67D-8034-4A5B-95FA-88B7FE1B044A}.Debug|x64.Build.0 = Debug|x64
+		{F190C67D-8034-4A5B-95FA-88B7FE1B044A}.Debug|x86.ActiveCfg = Debug|Win32
+		{F190C67D-8034-4A5B-95FA-88B7FE1B044A}.Debug|x86.Build.0 = Debug|Win32
+		{F190C67D-8034-4A5B-95FA-88B7FE1B044A}.Release|x64.ActiveCfg = Release|x64
+		{F190C67D-8034-4A5B-95FA-88B7FE1B044A}.Release|x64.Build.0 = Release|x64
+		{F190C67D-8034-4A5B-95FA-88B7FE1B044A}.Release|x86.ActiveCfg = Release|Win32
+		{F190C67D-8034-4A5B-95FA-88B7FE1B044A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

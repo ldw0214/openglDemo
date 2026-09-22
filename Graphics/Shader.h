@@ -14,6 +14,10 @@ namespace MiniEngine {
 	*着色器程序封装、支持热重载
 	*文件读取GLSL源码，修改自动重编
 	*/
+
+	extern const char* const errorVertSrc ;
+	extern const char* const errorFragSrc ;
+
 	class Shader
 	{
 	public:
@@ -89,11 +93,22 @@ namespace MiniEngine {
 		GLuint compileShader(GLenum type, const String& source)
 		{
 			GLuint shader = glCreateShader(type);
-			const char* src = source.c_str();
+			const char* src = m_errorState ? (type == GL_VERTEX_SHADER ? errorVertSrc : errorFragSrc) : source.c_str();
 			glShaderSource(shader, 1, &src, nullptr);
 			glCompileShader(shader);
+			try
+			{
+				checkProgram(shader, 'c');
+			}
+			catch (const std::exception& e)
+			{
+				GLuint shader = glCreateShader(type);
+				const char* srce = (type == GL_VERTEX_SHADER ? errorVertSrc : errorFragSrc);
+				glShaderSource(shader, 1, &srce, nullptr);
 
-			checkProgram(shader, 'c');
+				glCompileShader(shader);
+			}
+			
 
 			return shader;
 		}
@@ -104,8 +119,17 @@ namespace MiniEngine {
 			glAttachShader(m_programID, vert);
 			glAttachShader(m_programID, frag);
 			glLinkProgram(m_programID);
-
-			checkProgram(m_programID, 'l');
+			try
+			{
+				checkProgram(m_programID, 'l');
+			}
+			catch (const std::exception& e)
+			{
+				compileShader(GL_VERTEX_SHADER, errorVertSrc);
+				compileShader(GL_FRAGMENT_SHADER, errorFragSrc);
+				linkProgram(vert, frag);
+			}
+			
 
 		}
 		//完整加载流程 文件io-编译-链接
@@ -132,6 +156,7 @@ namespace MiniEngine {
 				glDeleteProgram(m_programID);
 				m_programID = 0;
 			}
+			m_errorState = false;
 		}
 		//检查编译结果 type 'c' 编译查询，'l'连接查询
 		void checkProgram(GLuint id, char type)
@@ -176,11 +201,12 @@ namespace MiniEngine {
 
 				LOG_INFO((errhead + infoLog).c_str());
 				throw std::runtime_error((errhead + infoLog).c_str());
+				m_errorState = true;
 
 			}
 		}
 
-
+		bool m_errorState = false;
 		GLuint m_programID = 0;
 		String m_vertPath, m_fragPath;
 		std::filesystem::file_time_type m_lastWriteTime;

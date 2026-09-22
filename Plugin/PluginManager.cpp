@@ -124,4 +124,13 @@ namespace MiniEngine {
 			p->onUpdateAspectRatio(aspectRatio);
 		}
 	}
+
+	void PluginManager::keyEventUpdate(int key)
+	{
+		for (auto& p : m_plugins) {
+			if (key >= 0 && key < 37 && p->keyCallbacks[key]) {
+				p->keyCallbacks[key]();
+			}
+		}
+	}
 }

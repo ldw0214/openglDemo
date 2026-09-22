@@ -12,26 +12,13 @@
 #include "Core/Logger.h"
 #include "Core/String.h"
 #include "Core/ResourceManager.h"
+#include "Plugin/IPlugin.h"
 
 
 
 namespace MiniEngine {
 	class Renderer;
 	class Shader;
-
-	/*
-	*插件接口：所有插件必须实现此抽象类
-	*/
-	
-	class IPlugin
-	{
-	public:
-		virtual ~IPlugin() = default;
-		virtual const char* getName() const = 0;
-		virtual void onUpdate(float deltaTime) = 0;
-		virtual void onRender(Renderer& renderer, Shader& shader) = 0;
-		virtual void onUpdateAspectRatio(float aspectRatio) = 0;
-	};
 
 
 	//插件管理器，负责动态加载.so/.dll
@@ -51,7 +38,7 @@ namespace MiniEngine {
 
 		void setGlfunCallBack(void* (*fun)(const char*)) { glfunCB = fun; };
 		void setModelCallBack(glm::mat4(*modelCB)()) { this->modelCB = modelCB; };
-
+		void keyEventUpdate(int key);
 
 
 	private:

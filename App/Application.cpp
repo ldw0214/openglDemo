@@ -188,6 +188,21 @@ namespace MiniEngine {
             default:
                 break;
             }
+            
+			// 传递给插件管理器处理 插件只有权处理英文和数字范围，需要重新映射到插件的按键范围 0-36
+			int key = tempKey.key;
+			if (key >= GLFW_KEY_A && key <= GLFW_KEY_Z)
+				key -=GLFW_KEY_A; // A-Z 映射到 0-25
+			else if (key >= GLFW_KEY_0 && key <= GLFW_KEY_9)
+				key = key - GLFW_KEY_0 + 26; // 0-9 映射到 26-35
+			else if (key == GLFW_KEY_SPACE)
+				key = 36; // 空格映射到 36
+			else
+				key = -1; // 非法按键，插件不处理
+
+			if (key >= 0)
+                m_pluginManager->keyEventUpdate(key);
+
             m_keyBufferQueue.pop();
         }
 

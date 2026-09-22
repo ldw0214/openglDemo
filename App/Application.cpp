@@ -32,9 +32,11 @@ namespace MiniEngine {
             lastTime = currentTime;
 
             processInput(dt);
-            updateApp(dt);
-            renderApp();
-
+            if (m_isMouseCaptured)
+            {
+                updateApp(dt);
+                renderApp();
+            }
             m_window->swapBuffers();
             m_window->pollEvents();
         }
@@ -47,12 +49,14 @@ namespace MiniEngine {
 
         // 鼠标移动 → 相机视角旋转
         m_window->setMouseCallback([this](double xpos, double ypos) {
-            m_camera->processMouseMovement(xpos, ypos);
+            if(this->m_isMouseCaptured)
+                m_camera->processMouseMovement(xpos, ypos);
             });
 
         // 滚轮 → 相机缩放
         m_window->setScrollCallback([this](double, double yoffset) {
-            m_camera->processMouseScroll(yoffset);
+            if (this->m_isMouseCaptured)
+                m_camera->processMouseScroll(yoffset);
             });
 
         // 窗口尺寸变化 → 调整视口
@@ -179,6 +183,7 @@ namespace MiniEngine {
                     m_isMouseCaptured = !m_isMouseCaptured;
                     glfwSetInputMode(native, GLFW_CURSOR, m_isMouseCaptured ? GLFW_CURSOR_DISABLED : GLFW_CURSOR_NORMAL);
                 }
+                break;
             default:
                 break;
             }
@@ -188,11 +193,17 @@ namespace MiniEngine {
         m_camera->applyGravity(dt,1.0);
 
         // 相机移动
-        m_camera->processKeyBoard(native, dt);
+		if (m_isMouseCaptured)
+            m_camera->processKeyBoard(native, dt);
 
-        // 按空格键发射粒子（每帧发射少量，演示用）
+        // 按左键发射粒子（每帧发射少量，演示用）
         if (glfwGetMouseButton(native, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS) {
             emitParticles(dt);
+            if (!m_isMouseCaptured)
+            {
+                m_isMouseCaptured = true;
+                glfwSetInputMode(native, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+            }
         }
 
         if (glfwGetKey(native, GLFW_KEY_ESCAPE) == GLFW_PRESS)

@@ -78,6 +78,8 @@ namespace MiniEngine {
         std::unique_ptr<ThreadPool> m_threadPool;
         std::unique_ptr<PluginManager> m_pluginManager;
 
+		bool m_isMouseCaptured = false; // 鼠标是否被捕获（用于相机控制）
+
         struct keyBufferItme
         {
             int key = 0;

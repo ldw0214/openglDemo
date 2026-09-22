@@ -56,7 +56,7 @@ namespace MiniEngine {
 		glm::mat4 m_localTransform{ 1.0f };
 		glm::mat4 m_worldTransform{ 1.0f };
 		std::shared_ptr<Mesh> m_mesh;
-		glm::vec3 m_color{ 1.0f,1.0f,1.0f };//Ä¬ÈÏ°×É«
+		glm::vec3 m_color{ 1.0f,0.9f,0.7f };
 
 		SceneNode* m_parent = nullptr;
 		std::vector<Ptr> m_children;

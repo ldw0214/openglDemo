@@ -9,13 +9,13 @@ out vec4 FragColor;
 
 uniform vec3 lightPos;         
 uniform vec3 viewPos;           
-uniform vec3 objectColor = vec3(1.0, 1.0, 1.0);  
+uniform vec3 objectColor = vec3(1.,1.,1.);  
 uniform sampler2D texture1;     
 uniform bool useTexture = true;
 
 void main() {
-
     vec3 ambient = 0.2 * objectColor;
+    ambient.r*=1.3;
 
     vec3 norm = normalize(Normal);
     vec3 lightDir = normalize(lightPos - FragPos);
@@ -36,3 +36,5 @@ void main() {
 
     FragColor = vec4(result, 1.0);
 }
+
+

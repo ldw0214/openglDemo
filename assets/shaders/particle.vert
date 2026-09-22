@@ -13,7 +13,7 @@ out float LifeFactor;
 void main() {
 
     gl_Position = projection * view * vec4(aPos, 1.0);
-    gl_PointSize = mix(5.0, 20.0, aLifeFactor);
+    gl_PointSize = mix(5.0, 25.0, aLifeFactor);
 
     ParticleColor = aColor;
     LifeFactor = aLifeFactor;

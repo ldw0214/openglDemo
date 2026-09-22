@@ -118,5 +118,10 @@ namespace MiniEngine {
         }
     }
 
-
+	void PluginManager::updateAspectRatio(float aspectRatio)
+	{
+		for (auto& p : m_plugins) {
+			p->onUpdateAspectRatio(aspectRatio);
+		}
+	}
 }

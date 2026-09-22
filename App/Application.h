@@ -54,6 +54,9 @@ namespace MiniEngine {
 
         void updateApp(float dt);
 
+		// 更新屏幕比例
+		void updateAspectRatio(int width, int height);
+
         void renderApp();
 
         void shutdown();
@@ -77,6 +80,9 @@ namespace MiniEngine {
         std::unique_ptr<ParticleSystem> m_particleSystem;
         std::unique_ptr<ThreadPool> m_threadPool;
         std::unique_ptr<PluginManager> m_pluginManager;
+
+        // 屏幕比例
+		float m_aspectRatio = 16.0f / 9.0f;
 
 		bool m_isMouseCaptured = false; // 鼠标是否被捕获（用于相机控制）
 

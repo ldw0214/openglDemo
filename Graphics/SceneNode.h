@@ -52,11 +52,16 @@ namespace MiniEngine {
 		//递归渲染：传递渲染器和着色器，绘制自身并递归子节点
 		virtual void render(Renderer& renderer, Shader& shader);
 
+		void updateAspectRatio(float aspectRatio);
+
 	private:
 		glm::mat4 m_localTransform{ 1.0f };
 		glm::mat4 m_worldTransform{ 1.0f };
 		std::shared_ptr<Mesh> m_mesh;
 		glm::vec3 m_color{ 1.0f,0.9f,0.7f };
+
+		//屏幕比例
+		float m_aspectRatio = ASPECT_RATIO;
 
 		SceneNode* m_parent = nullptr;
 		std::vector<Ptr> m_children;

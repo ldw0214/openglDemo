@@ -60,8 +60,8 @@ namespace MiniEngine {
             });
 
         // 窗口尺寸变化 → 调整视口
-        m_window->setResizeCallback([](int width, int height) {
-            glViewport(0, 0, width, height);
+        m_window->setResizeCallback([this](int width, int height) {
+			this->updateAspectRatio(width, height);
             });
 
         // 键盘事件回调，操作响应
@@ -88,6 +88,7 @@ namespace MiniEngine {
 
         glfwSetInputMode(m_window->getNativeWindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
         m_isMouseCaptured = true;
+		m_aspectRatio = m_window->getAspectRatio();
     }
     void Application::initOpenGL()
     {
@@ -286,4 +287,13 @@ namespace MiniEngine {
         m_threadPool.reset();
         // Window 析构会自动清理 GLFW
     }
+
+	void Application::updateAspectRatio(int width, int height)
+	{
+        glViewport(0, 0, width, height);
+        m_aspectRatio = width / static_cast<float>(height);
+		m_root->updateAspectRatio(m_aspectRatio);
+		m_pluginManager->updateAspectRatio(m_aspectRatio);
+	}
+
 } // namespace MiniEngine

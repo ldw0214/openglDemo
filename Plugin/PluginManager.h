@@ -30,6 +30,7 @@ namespace MiniEngine {
 		virtual const char* getName() const = 0;
 		virtual void onUpdate(float deltaTime) = 0;
 		virtual void onRender(Renderer& renderer, Shader& shader) = 0;
+		virtual void onUpdateAspectRatio(float aspectRatio) = 0;
 	};
 
 
@@ -42,6 +43,7 @@ namespace MiniEngine {
 		void setPluginMesh(const ResourceManager* rm);
 		//更新插件
 		void updateAll(float dt);
+		void updateAspectRatio(float aspectRatio);
 		//绘制插件
 		void renderAll(Renderer& renderer, Shader& shader);
 
@@ -57,6 +59,8 @@ namespace MiniEngine {
 		std::vector<SetMeshSingleton> m_setSingletonFuns;
 		void* (*glfunCB)(const char*) = nullptr;
 		glm::mat4(*modelCB)() = nullptr;
+
+		float m_aspectRatio = 1280.0f / 720.0f;
 	
 	};
 

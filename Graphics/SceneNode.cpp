@@ -48,7 +48,7 @@ namespace MiniEngine {
 			shader.bind();
 			shader.setMat4("model", m_worldTransform);
 			shader.setMat4("view", renderer.getViewMatrix());
-			shader.setMat4("projection", renderer.getProjectionMatrix(ASPECT_RATIO));
+			shader.setMat4("projection", renderer.getProjectionMatrix(m_aspectRatio));
 			shader.setVec3("objectColor", m_color);
 			m_mesh->bind();
 			glDrawElements(GL_TRIANGLES,static_cast<GLsizei>(m_mesh->indexCount()),GL_UNSIGNED_INT,0);
@@ -57,6 +57,13 @@ namespace MiniEngine {
 		for (auto& children: m_children)
 		{
 			children->render(renderer, shader);
+		}
+	}
+	void SceneNode::updateAspectRatio(float aspectRatio)
+	{
+		m_aspectRatio = aspectRatio;
+		for (auto& child : m_children) {
+			child->updateAspectRatio(m_aspectRatio);
 		}
 	}
 }

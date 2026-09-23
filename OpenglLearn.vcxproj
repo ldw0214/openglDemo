@@ -176,6 +176,7 @@
     <ClInclude Include="Graphics\stb_image.h" />
     <ClInclude Include="Graphics\Texture.h" />
     <ClInclude Include="Graphics\VertexArray.h" />
+    <ClInclude Include="Plugin\IPlugin.h" />
     <ClInclude Include="Plugin\PluginManager.h" />
     <ClInclude Include="Threading\SPSCQueue.h" />
     <ClInclude Include="Threading\ThreadPool.h" />

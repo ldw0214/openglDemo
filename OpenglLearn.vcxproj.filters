@@ -176,6 +176,9 @@
     <ClInclude Include="Core\ResourceManager.h">
       <Filter>头文件\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Plugin\IPlugin.h">
+      <Filter>头文件\Plugin</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\shaders\basic.frag">

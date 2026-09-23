@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "imguiPluginDeom", "..\imgui
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ImGUIEdit", "..\ImGUIEdit\ImGUIEdit.vcxproj", "{F190C67D-8034-4A5B-95FA-88B7FE1B044A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "nimiMC", "..\nimiMC\nimiMC.vcxproj", "{EEFF9B4C-6084-4D3C-8279-E18E27CDD20A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{F190C67D-8034-4A5B-95FA-88B7FE1B044A}.Release|x64.Build.0 = Release|x64
 		{F190C67D-8034-4A5B-95FA-88B7FE1B044A}.Release|x86.ActiveCfg = Release|Win32
 		{F190C67D-8034-4A5B-95FA-88B7FE1B044A}.Release|x86.Build.0 = Release|Win32
+		{EEFF9B4C-6084-4D3C-8279-E18E27CDD20A}.Debug|x64.ActiveCfg = Debug|x64
+		{EEFF9B4C-6084-4D3C-8279-E18E27CDD20A}.Debug|x64.Build.0 = Debug|x64
+		{EEFF9B4C-6084-4D3C-8279-E18E27CDD20A}.Debug|x86.ActiveCfg = Debug|Win32
+		{EEFF9B4C-6084-4D3C-8279-E18E27CDD20A}.Debug|x86.Build.0 = Debug|Win32
+		{EEFF9B4C-6084-4D3C-8279-E18E27CDD20A}.Release|x64.ActiveCfg = Release|x64
+		{EEFF9B4C-6084-4D3C-8279-E18E27CDD20A}.Release|x64.Build.0 = Release|x64
+		{EEFF9B4C-6084-4D3C-8279-E18E27CDD20A}.Release|x86.ActiveCfg = Release|Win32
+		{EEFF9B4C-6084-4D3C-8279-E18E27CDD20A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
